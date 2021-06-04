@@ -27,13 +27,7 @@ trait ConsumesExternalService
         }
 
         // perform the request (method, url, form parameters, headers)
-        $response = $client->request(
-            $method,
-            $requestUrl,
-            ['form_params' =>
-            $form_params, 'headers' =>
-            $headers]
-        );
+        $response = $client->request($method,$requestUrl,['form_params' => $form_params, 'headers' => $headers]);
         // return the response body contents
         return $response->getBody()->getContents();
     }
