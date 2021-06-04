@@ -11,15 +11,10 @@ trait ConsumesExternalService
      * @return string
      */
     // note form params and headers are optional
-    public function performRequest(
-        $method,
-        $requestUrl,
-        $form_params = [],
-        $headers = []
-    ) {
+    public function performRequest($method,$requestUrl,$form_params = [],$headers = []) 
+    {
         // create a new client request
-        $client = new Client([
-            'base_uri' => $this->baseUri,
+        $client = new Client(['base_uri' => $this->baseUri,
         ]);
 
         if(isset($this->secret)) {
